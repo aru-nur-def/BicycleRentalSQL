@@ -1,0 +1,14 @@
+CREATE TABLE Detail (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Brand VARCHAR(50) NOT NULL,
+    Type VARCHAR(50) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    Price DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE DetailForBicycle (
+    BicycleId INT NOT NULL,
+    DetailId INT NOT NULL,
+    FOREIGN KEY (BicycleId) REFERENCES Bicycle(Id),
+    FOREIGN KEY (DetailId) REFERENCES Detail(Id)
+);
